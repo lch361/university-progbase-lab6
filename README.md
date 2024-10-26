@@ -10,6 +10,8 @@
 
 1.	[Цель работы](#цель-работы)
 	1.	[Реквизиты](#реквизиты)
+1.	[Сделанные до работы шаги](#сделанные-до-работы-шаги)
+1.	[Создание форка репозитория](#создание-форка-репозитория)
 
 #	Цель работы
 
@@ -43,3 +45,58 @@
 [Coreutils]: https://www.gnu.org/software/coreutils
 [delta]: https://github.com/dandavison/delta
 [eza]: https://github.com/eza-community/eza
+
+#	Сделанные до работы шаги
+
+Прочитав условия задачи, оказалось, что следующие шаги уже выполнены:
+1.	[x]	Создан аккаунт на GitHub.
+1.	[ ]	Форк не создан.
+1.	[x]	Установлен Git.
+1.	[x]	Настроен Git.
+1.	[ ] ...
+
+Что GitHub, что Git уже используются мной для моей деятельности разработчика,
+поэтому не удивительно, что они у меня уже есть.
+Git отконфигурирован следующим образом (файл `~/.gitconfig`):
+
+```git-config
+[user]
+	email = author@lch361.net
+	name = lch361
+
+[core]
+	pager = delta
+	excludesfile = /home/lch361/.gitignore
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true    # use n and N to move between diff sections
+	light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	colorMoved = default
+
+[init]
+	defaultBranch = main
+```
+
+После этого, можем приступать к выполнению работы с тех шагов, которые пока что
+не сделаны.
+
+#	Создание форка репозитория
+
+Имея аккаунт в GitHub, возможно импортировать себе в профиль чужие репозитории:
+это скопирует всю историю изменений, но сохранит ссылку на оригинал.
+На скриншоте ниже приведено создание форка для этого репозитория.
+
+![GitHub fork](assets/screenshots/github-fork.png)
+
+Как видно по скриншоту, можно отредактировать название репозитория, его описание,
+а также переключить одну очень важную галочку &mdash; синхронизировать *только*
+ветку `master` или все. Для этой работы **очень важно**, чтобы галочка не стояла
+включённой &mdash; нам понадобятся все имеющиеся ветки.
