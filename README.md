@@ -22,6 +22,7 @@
 1.	[Произвольное создание коммитов](#произвольное-создание-коммитов)
 1.	[Откат изменений](#откат-изменений)
 1.	[Создание ветки](#создание-ветки)
+1.	[Форматирование истории](#форматирование-истории)
 
 #	Цель работы
 
@@ -254,6 +255,39 @@ git push --force
 
 Дальнейшее редактирование отчёта произойдёт за кадром, хотя коммиты
 по частям работы будут сделаны, продвинув историю ветки `report` над `master`.
+
+#	Форматирование истории
+
+Помимо стандартного просмотра коммитов, `git-log` принимает следующие
+опции:
+
+```sh
+git log --format="%h %ad %an %s" --date=format:"%d.%m.%y %H:%M"
+```
+
+Таким образом, получим информацию обо всех коммитах до момента
+завершения этой главы в отчёте.
+
+```
+909fac5 26.10.24 19:40 lch361 Added footnotes
+5fb6021 26.10.24 19:34 lch361 Described every local Git step
+6721a20 26.10.24 18:57 lch361 Added a forgotten alias to requisites
+5f03af7 26.10.24 18:56 lch361 Added cloning repository chapter
+9293de0 26.10.24 18:49 lch361 Added beginner steps to report
+74c7a13 26.10.24 18:30 lch361 Started writing README.md report
+e1687f1 26.10.24 17:55 lch361 Added all screenshots to this point
+3b0a937 26.10.24 17:49 lch361 Rendered all asciinemas to this point
+76eb4f7 26.10.24 07:05 lch361 Revert "Added one empty and one short file" and everything after it
+09f7aab 26.10.24 06:50 lch361 Deleted one file, deleted contents of another, modified the third.
+ce6efda 26.10.24 06:49 lch361 Modified two files, added third
+085f269 26.10.24 06:48 lch361 Added one empty and one short file
+9e02960 26.10.24 06:28 lch361 Merge branch 'branch1'
+26dd926 26.10.24 02:53 Lich Create remote-message
+921f53b 21.11.20 20:09 Kurtyanik Обновление информации
+0f9f50d 21.11.20 20:08 Kurtyanik Заполнил файл
+c08a654 21.11.20 20:02 Kurtyanik Файл создан пустым
+3c6e913 21.11.20 19:58 Kurtyanik Initial commit
+```
 
 [^1]: Если вы &mdash; мой преподаватель или одногруппник, вы знаете о ком речь.
 [^2]: Удивительно, но в Markdown списки можно лишь автоматически нумеровать,
